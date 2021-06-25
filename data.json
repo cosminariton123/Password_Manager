@@ -1,0 +1,50 @@
+{
+  "users": [
+    {
+      "name": "Cosmin",
+      "salt": "iKV47qrwj7L1jlBOIKFwHo2kqsjlobovVBIfmqbEHuc=",
+      "master_password": "T9YUJSbVKU0ii3S8weWR4/vhXTjuGVEzAkapRMotqUO49Urodkxqd2ayQb87RKNuEq5KcEz6ykFgWfP3ClF8AA==",
+      "seif": {
+        "Microsoft": {
+          "parola": "dG2bpZaMHO+mmYZb2iclKw==",
+          "iv": "+Ou7y0YxO6gXWcoo9rlODA=="
+        },
+        "Yahoo": {
+          "parola": "9NHuo51fClyf0/NJEYtDAg==",
+          "iv": "j6OaCDSKP7li3eW6coKEuA=="
+        },
+        "Facebook": {
+          "parola": "tjFH/ilPpyFjt0NY/ZGZZA==",
+          "iv": "2YYMjIEfgKTLsYPvcHhrNA=="
+        }
+      }
+    },
+    {
+      "name": "Paul",
+      "salt": "IL1YVC2Dr9SO7FNfwZviYGJKvfhopEO3BjcPIfxt/QA=",
+      "master_password": "9zLTTTIGAcFfzonlaUhs2udQD/91P9vriGiO9IErcdG4QhQvodu7xXIKN/kCDO3JhJiB/jzwUF/o+LLtG1/Y8Q==",
+      "seif": ""
+    },
+    {
+      "name": "Alex",
+      "salt": "0+uHdRjfCH+5dC2kujmMWgprX0gi0CybOkk7LBehwqM=",
+      "master_password": "LBf6P3lcbGuPJU1AzNdq1qRj5fjAlBleZ1x/6ZriFQC9gApNTVtKUsvzGq3J7F4xnMZXP6+UHLI5TlAkPBH2Xg==",
+      "seif": ""
+    },
+    {
+      "name": "Ana",
+      "salt": "g8Z4SKrxxlMvCzPQs8pkOjVIlbQwrO9RfA5hes+/gZw=",
+      "master_password": "QMW6ztSz12ea35Naz5qWrP616usXtFHapPsftQkgaN20hZakEh9DiHlIA2b1N9Srfj1G1sMFMeRE3diTbDcEKQ==",
+      "seif": {
+        "tinder": {
+          "parola": "WdnWnsdWhsP+Ysrj3i2z9Q==",
+          "iv": "tPaDQuqgltc68Srn0776rg=="
+        },
+        "gmail": {
+          "parola": "Y9aLgcLmh1FFmppelAxNIQ==",
+          "iv": "fyWeACYEkOUPTz44PTGmzA=="
+        }
+      }
+    }
+  ]
+}
