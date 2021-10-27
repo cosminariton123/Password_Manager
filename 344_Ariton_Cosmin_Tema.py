@@ -3,6 +3,7 @@ from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 import os
 import json
 import base64
+import copy
 
 
 class User():
@@ -42,8 +43,15 @@ class Database():
         self.file = file
 
         fisier = ''
-        with open(self.file, 'r') as f:
-            fisier = f.read()
+
+        try:
+            with open(self.file, 'r') as f:
+                fisier = f.read()
+        except FileNotFoundError:
+            with open(self.file, "w") as f:
+                pass
+            with open(self.file, 'r') as f:
+                fisier = f.read()
         
         if fisier == '':
             with open(self.file, 'w') as f:
@@ -72,11 +80,19 @@ class Database():
         persoana['master_password']= encrypt_password_master(password, salt)
         persoana['seif'] = ''
         self.data['users'].append(persoana)
-
-
-        with open(self.file, 'w') as f:
-            json.dump(self.data, f , indent = 2)
-
+        self.autentificare(username, password)
+    
+    def stergere_user_curent(self):
+        if  self.user == None:
+            print("Nu esti autentificat cu un cont!")
+        else:
+            for idx, person in enumerate(self.data["users"]):
+                if person["name"] == self.user.name:
+                    del self.data["users"][idx]
+            print("Utilizatorul curent, " + self.user.name + ", a fost sters")
+            with open(self.file, 'w') as f:
+                json.dump(self.data, f, indent = 2)
+            self.logout()
     
     def autentificare(self, username, password):
         
@@ -129,7 +145,15 @@ class Database():
             print('Nu exista un user autentificat')
             return
         
-        for person in self. data['users']:
+        exists = False
+        for person in self.data["users"]:
+            if person["name"] == self.user.name:
+                exists = True
+        
+        if exists == False:
+            self.data['users'].append(copy.deepcopy(self.user))
+
+        for person in self.data['users']:
             if person['name'] == self.user.name:
                 person['seif'] = self.user.seif
 
@@ -225,6 +249,37 @@ if __name__ == '__main__':
 
     database = Database(FISIER_BAZA_DE_DATE)
 
+    optiuni_alegere_nelogat = {
+                                1:database.creare_user,
+                                2:database.autentificare}
+
+    optiuni_alegere_logat = {2:database.logout,
+                             3:database.save,
+                             4:database.afisare_date_user,
+                             5:database.stergere_user_curent}
+    while True:
+        if database.user == None:
+            try:
+                alegere = int(input("\n1 Creare user\n2 Autentificare\n"))
+            except ValueError:
+                alegere = None
+            if alegere in optiuni_alegere_nelogat:
+                optiuni_alegere_nelogat[alegere](input("Username="), input("Password="))
+            else:
+                print("Optiunea nu exista\n")
+        else:
+            try:
+                alegere = int(input("\n1 Adauga in seif\n2 Logout\n3 Salveaza schimbarile\n4 Afisare date user curent\n5 Sterge contul curent si salveaza schimbarile\n"))
+            except ValueError:
+                alegere = None
+            if alegere == 1:
+                database.adauga_la_seif(input("Serviciu="), input("Parola="))
+            elif alegere in optiuni_alegere_logat:
+                optiuni_alegere_logat[alegere]()
+            else:
+                print("Optiunea nu exista\n")
+
+            
 
     database.creare_user('Cosmin', 'ParolaExtremDeSigura')
     database.creare_user('Paul', '123456')
@@ -253,4 +308,4 @@ if __name__ == '__main__':
     print('\n\n\n')
     database.autentificare('Ana', 'parola123')
     database.afisare_date_user()
-    database.logout()
+    database.stergere_user_curent()
