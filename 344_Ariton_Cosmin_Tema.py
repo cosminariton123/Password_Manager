@@ -81,6 +81,7 @@ class Database():
         persoana['seif'] = ''
         self.data['users'].append(persoana)
         self.autentificare(username, password)
+        self.save()
     
     def stergere_user_curent(self):
         if  self.user == None:
@@ -253,10 +254,14 @@ if __name__ == '__main__':
                                 1:database.creare_user,
                                 2:database.autentificare}
 
-    optiuni_alegere_logat = {2:database.logout,
+    optiuni_alegere_logat = {1:lambda: database.adauga_la_seif(input("Serviciu="), input("Parola=")),
+                             2:database.logout,
                              3:database.save,
                              4:database.afisare_date_user,
-                             5:database.stergere_user_curent}
+                             5:lambda: database.stergere_user_curent() if input("Introdu numele contului pentru confirmare: ") == database.user.name else print("Incorect")}
+
+
+
     while True:
         if database.user == None:
             try:
@@ -272,9 +277,7 @@ if __name__ == '__main__':
                 alegere = int(input("\n1 Adauga in seif\n2 Logout\n3 Salveaza schimbarile\n4 Afisare date user curent\n5 Sterge contul curent si salveaza schimbarile\n"))
             except ValueError:
                 alegere = None
-            if alegere == 1:
-                database.adauga_la_seif(input("Serviciu="), input("Parola="))
-            elif alegere in optiuni_alegere_logat:
+            if alegere in optiuni_alegere_logat:
                 optiuni_alegere_logat[alegere]()
             else:
                 print("Optiunea nu exista\n")

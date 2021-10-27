@@ -2,31 +2,27 @@
   "users": [
     {
       "name": "Cosmin",
-      "salt": "RaKy59XH0LZ88pSjtHVwMHTJnIzUl3V+bNMKTX7KFUo=",
-      "master_password": "BZDYKfbc0RVHeqlKSrFj9nf+ucFgLBNhb0BU6fHjcwo0Nydr5mxxjofLLYF1J36KIwU8udh0s76IZ2iih38uqw==",
+      "salt": "VPYUTHYR1NImBpSUGYNiG98PYsTwyX3bRyOw+EEQERE=",
+      "master_password": "LGghciMAxPS10R1HpBfvV+oK7lO8vxv7nl19BFGOWbquAx6KkR2Lh0mYwWix0InGVvtUqJ96YONcumtWnGRKJg==",
       "seif": {
         "Microsoft": {
-          "parola": "7Lm/K+7JzuVkdYavUVA9Ww==",
-          "iv": "S8UrLmf1j01M1Rmzk7nFAA=="
+          "parola": "1fKGYMuQw2LLhvOlOy3FGw==",
+          "iv": "ZfUhTK0+0gNaDCfID8ZziQ=="
         },
-        "Google": {
-          "parola": "ujuLA8mBR6X+9UPSfwzskw==",
-          "iv": "F02iEeekhV3XSsjRn7ib0Q=="
-        },
-        "Yahoo": {
-          "parola": "S9szxF8FkXO6TDuXp6iq9A==",
-          "iv": "xf7pBqnY/nHbEtJ2pj2lSw=="
+        "Gmail": {
+          "parola": "5wr7C6eknJUHqwCRm04BZQ==",
+          "iv": "IupuYBefR7G9hRj1Tk/mrA=="
         }
       }
     },
     {
       "name": "Ana",
-      "salt": "3OeQNz/oHUK5okawTcWNFYnYkgd8z+UVTNhng67l3mw=",
-      "master_password": "vcCMNxrUXCZh8K1IInYV9akIdePAsL8UXAz023j/AqUw8R5ZOEGwUttsizk6nSuMGmb6fO24+67lk2WOQNDnQQ==",
+      "salt": "UUFhXkS/Hyx2JYC6ev4GADwqS/WB7ZRAqXMMioqh5hU=",
+      "master_password": "wyhR6x9V24nZf3hGCgptaFQm0EncO8CPEN2s+Frn1t1lDoZeCEzykS7BiZ2J6EWGRvWiIYn2CP4+KNu2PkZIiw==",
       "seif": {
-        "Facebook": {
-          "parola": "fBj7NPNJDw3Uvt2KmSiW2A==",
-          "iv": "QENu5sWz2OT0x7rxorpLyQ=="
+        "Yahoo": {
+          "parola": "28ZzREJUPwIVnSm5URUJvQ==",
+          "iv": "VmtE72ZrH+Y/ET4hhrXf3g=="
         }
       }
     }
