@@ -281,34 +281,3 @@ if __name__ == '__main__':
                 optiuni_alegere_logat[alegere]()
             else:
                 print("Optiunea nu exista\n")
-
-            
-
-    database.creare_user('Cosmin', 'ParolaExtremDeSigura')
-    database.creare_user('Paul', '123456')
-    database.creare_user('Alex', 'pisica')
-    database.creare_user('Ana', 'parola123')
-    
-    database.autentificare('Cosmin', 'ParolaExtremDeSigura')
-    database.adauga_la_seif('Microsoft', 'parolaMicrosof')
-    database.adauga_la_seif('Yahoo', 'parolaYahoo')
-    database.adauga_la_seif('Facebook', 'parolaFacebook')
-    database.save()
-    database.logout()
-
-    database.autentificare('Ana', 'parola123')
-    database.adauga_la_seif('tinder', 'parolaTinder')
-    database.adauga_la_seif('gmail', 'parolaGmail')
-    database.save()
-    database.logout()
-    
-
-
-    database.autentificare('Cosmin', 'ParolaExtremDeSigura')
-    database.afisare_date_user()
-    database.logout()
-
-    print('\n\n\n')
-    database.autentificare('Ana', 'parola123')
-    database.afisare_date_user()
-    database.stergere_user_curent()
